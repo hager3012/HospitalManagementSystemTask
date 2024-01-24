@@ -1,0 +1,16 @@
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\obj\Debug\net8.0\Hospital-ManagementSystem.Repository.csproj.AssemblyReference.cache
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\obj\Debug\net8.0\Hospital-ManagementSystem.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\obj\Debug\net8.0\Hospital-ManagementSystem.Repository.AssemblyInfoInputs.cache
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\obj\Debug\net8.0\Hospital-ManagementSystem.Repository.AssemblyInfo.cs
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\obj\Debug\net8.0\Hospital-ManagementSystem.Repository.csproj.CoreCompileInputs.cache
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\obj\Debug\net8.0\Hospital-ManagementSystem.Repository.sourcelink.json
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\bin\Debug\net8.0\Hospital-ManagementSystem.Repository.deps.json
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\bin\Debug\net8.0\Hospital-ManagementSystem.Repository.dll
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\bin\Debug\net8.0\Hospital-ManagementSystem.Repository.pdb
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\bin\Debug\net8.0\Hospital-ManagementSystem.Core.dll
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\bin\Debug\net8.0\Hospital-ManagementSystem.Core.pdb
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\obj\Debug\net8.0\Hospital-ManagementSystem.Repository.csproj.CopyComplete
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\obj\Debug\net8.0\Hospital-ManagementSystem.Repository.dll
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\obj\Debug\net8.0\refint\Hospital-ManagementSystem.Repository.dll
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\obj\Debug\net8.0\Hospital-ManagementSystem.Repository.pdb
+D:\testCode\Hospital-Management-System\Hospital-ManagementSystem.Repository\obj\Debug\net8.0\ref\Hospital-ManagementSystem.Repository.dll

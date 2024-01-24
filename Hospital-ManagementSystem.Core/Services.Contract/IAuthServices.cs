@@ -16,6 +16,6 @@ namespace Hospital_ManagementSystem.Core.Services.Contract
         /// <param name="user">An instance of AppUser.</param>
         /// <param name="manager">An instance userManager</param>
         /// <returns>string of token</returns>
-        Task<string> CreateTokenAsync(AppUser user,UserManager<AppUser> manager);
+        Task<string> CreateTokenAsync(Patient user,UserManager<Patient> manager);
     }
 }

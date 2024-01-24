@@ -1,6 +1,6 @@
 using Hospital_Management_System.ExtiensionMethod;
 using Hospital_ManagementSystem.Core.Entity.Identity;
-using Hospital_ManagementSystem.Repository.IdentityData;
+using Hospital_ManagementSystem.Repository.Data;
 using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +20,8 @@ namespace Hospital_Management_System
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<userDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnectionString")));
+            //builder.Services.AddDbContext<userDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnectionString")));
+            builder.Services.AddDbContext<PatientDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("AppConnectionString")));
             //builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
             //    .AddNegotiate();
 

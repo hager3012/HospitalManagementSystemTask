@@ -1019,6 +1019,7 @@
       "Hospital-ManagementSystem.Repository/1.0.0": {
         "dependencies": {
           "Hospital-ManagementSystem.Core": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.1"
         },
         "runtime": {

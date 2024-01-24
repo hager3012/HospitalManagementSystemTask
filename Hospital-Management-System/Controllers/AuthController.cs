@@ -12,11 +12,11 @@ namespace Hospital_Management_System.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly UserManager<AppUser> _userManager;
-        private readonly SignInManager<AppUser> _signInManager;
+        private readonly UserManager<Patient> _userManager;
+        private readonly SignInManager<Patient> _signInManager;
         private readonly IAuthServices _authServices;
 
-        public AuthController(UserManager<AppUser> userManager,SignInManager<AppUser> signInManager,IAuthServices authServices)
+        public AuthController(UserManager<Patient> userManager,SignInManager<Patient> signInManager,IAuthServices authServices)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -27,7 +27,7 @@ namespace Hospital_Management_System.Controllers
         {
             if (EmailExists(userRegister.Email).Result.Value)
                 return BadRequest(new ApiValidationResponse(400) { Errors = new string[] {"this email is used"} });
-            var user = new AppUser
+            var user = new Patient
             {
                 fristName = userRegister.FristName,
                 lastName = userRegister.LastName,

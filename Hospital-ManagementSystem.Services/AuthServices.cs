@@ -27,7 +27,7 @@ namespace Hospital_ManagementSystem.Services
         /// <param name="user">An instance of AppUser.</param>
         /// <param name="manager">An instance of UserManager</param>
         /// <returns>string token</returns>
-        public async Task<string> CreateTokenAsync(AppUser user, UserManager<AppUser> manager)
+        public async Task<string> CreateTokenAsync(Patient user, UserManager<Patient> manager)
         {
             var authClaims = new List<Claim>()
             {

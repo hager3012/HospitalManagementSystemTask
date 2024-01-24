@@ -1,6 +1,6 @@
 ﻿using Hospital_ManagementSystem.Core.Entity.Identity;
 using Hospital_ManagementSystem.Core.Services.Contract;
-using Hospital_ManagementSystem.Repository.IdentityData;
+using Hospital_ManagementSystem.Repository.Data;
 using Hospital_ManagementSystem.Services;
 using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.AspNetCore.Identity;
@@ -16,7 +16,7 @@ namespace Hospital_Management_System.ExtiensionMethod
         /// <returns>An instance of the services</returns>
         public static IServiceCollection AddIdentityServuces(this IServiceCollection services,IConfiguration configuration)
         {
-            services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<userDbContext>();
+            services.AddIdentity<Patient,IdentityRole>().AddEntityFrameworkStores<PatientDbContext>();
             services.AddScoped(typeof(IAuthServices), typeof(AuthServices));
             //services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNegotiate();
             //services.AddAuthorization(options =>

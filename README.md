@@ -16,32 +16,27 @@ The Patient Module is an integral component of our healthcare system, designed t
 - **Patient Records:**
   - Access a summary of personal health records including basic information, allergies, and pre-existing medical conditions.
 
-### 3. View Medical History
-
-- **Detailed Medical History:**
-  - Explore a comprehensive medical history, encompassing diagnoses, treatments, medications, and healthcare provider interactions.
-
-### 4. View Doctor List
+### 3. View Doctor List
 
 - **Browse Doctors:**
   - Access a list of healthcare professionals within the system, along with their specialties and contact details.
 
-### 5. View Available Room
+### 4. View Available Room
 
 - **Room Availability:**
   - Check the availability of rooms within the healthcare facility.
 
-### 6. View Prescription Details
+### 5. View Prescription Details
 
 - **Prescription Information:**
   - Review details of prescribed medications, dosage instructions, and any additional notes from healthcare providers.
 
-### 7. View Appointment List with Doctor
+### 6. View Appointment List with Doctor
 
 - **Upcoming Appointments:**
   - Retrieve a list of upcoming appointments with details such as date, time, and assigned healthcare provider.
 
-### 8. Register an Appointment with Doctor or Cancel
+### 7. Register an Appointment with Doctor or Cancel
 
 - **Appointment Registration:**
   - Patients can schedule appointments with their preferred healthcare providers.
@@ -49,7 +44,7 @@ The Patient Module is an integral component of our healthcare system, designed t
 - **Appointment Cancellation:**
   - Allow patients to cancel appointments when necessary.
 
-### 9. Register Room or Cancel
+### 8. Register Room or Cancel
 
 - **Room Registration:**
   - Patients can request or register for available rooms within the healthcare facility.

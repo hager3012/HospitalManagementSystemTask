@@ -9,6 +9,7 @@ namespace Hospital_ManagementSystem.Core.Entity.PatientModule
     public class Doctor:BaseEntity
     {
         public string FullName { get; set; }
+        public string Specialization { get; set; }
         public ICollection<DoctorSchedule> Schedules { get; set; }
         public ICollection<Appointment> Appointments { get; set; }
     }

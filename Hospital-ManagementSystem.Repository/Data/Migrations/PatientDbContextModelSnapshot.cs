@@ -133,6 +133,10 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Specialization")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Doctors");
@@ -242,6 +246,7 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("PatientId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("PhoneNumber")
@@ -496,7 +501,9 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
                 {
                     b.HasOne("Hospital_ManagementSystem.Core.Entity.Identity.Patient", "Patient")
                         .WithMany()
-                        .HasForeignKey("PatientId");
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Patient");
                 });

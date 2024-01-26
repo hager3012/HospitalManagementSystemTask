@@ -1,6 +1,7 @@
 ﻿
 using Hospital_ManagementSystem.Core.Entity.Identity;
 using Hospital_ManagementSystem.Core.Entity.PatientModule.RecordEnities;
+using Record=Hospital_ManagementSystem.Core.Entity.PatientModule.RecordEnities.Record;
 using Hospital_ManagementSystem.Repository.Data;
 using Hospital_ManagementSystem.Services;
 using Microsoft.EntityFrameworkCore;
@@ -15,14 +16,14 @@ namespace Hospital_Management_System.Tests.Services
     public class RecordServicesTests
     {
         [Fact]
-        public async Task ViewRecord_ShouldReturnRecord()
+        public async Task ViewRecord_ReturnRecord()
         {
             // Arrange
            using var context = ContextGenerator.Generator();
 
 
             // Add test data to the in-memory database
-            var record = new Hospital_ManagementSystem.Core.Entity.PatientModule.RecordEnities.Record
+            var record = new Record
             {
                 Id = 1,
                 PatientId = "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7",

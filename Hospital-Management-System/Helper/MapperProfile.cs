@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Hospital_Management_System.Dtos;
+using Hospital_ManagementSystem.Core.Entity.PatientModule;
 using Hospital_ManagementSystem.Core.Entity.PatientModule.RecordEnities;
 
 namespace Hospital_Management_System.Helper
@@ -17,6 +18,7 @@ namespace Hospital_Management_System.Helper
             CreateMap<SurgicalHistory, surgicalHistoriesDto>();
             CreateMap<Past_illnesses, past_IllnessesDto>();
             CreateMap<VitalSigns,vitalSignsDto>();
+            CreateMap<Doctor, DoctorToReturnDto>();
         }
     }
 }

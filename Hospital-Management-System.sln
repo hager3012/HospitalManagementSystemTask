@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital-ManagementSystem.R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital-ManagementSystem.Services", "Hospital-ManagementSystem.Services\Hospital-ManagementSystem.Services.csproj", "{DE830C5C-E278-4BB3-81A7-BFE8104404FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital-Management-System.Test", "Hospital-Management-System.Test\Hospital-Management-System.Test.csproj", "{C078497C-55ED-43A9-96A5-04A07A7E3CDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital-Management-System.Tests", "Hospital-Management-System.Tests\Hospital-Management-System.Tests.csproj", "{F00CBE96-5245-47F1-8D61-74FF97F3F3AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{DE830C5C-E278-4BB3-81A7-BFE8104404FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE830C5C-E278-4BB3-81A7-BFE8104404FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE830C5C-E278-4BB3-81A7-BFE8104404FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C078497C-55ED-43A9-96A5-04A07A7E3CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C078497C-55ED-43A9-96A5-04A07A7E3CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C078497C-55ED-43A9-96A5-04A07A7E3CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C078497C-55ED-43A9-96A5-04A07A7E3CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F00CBE96-5245-47F1-8D61-74FF97F3F3AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F00CBE96-5245-47F1-8D61-74FF97F3F3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F00CBE96-5245-47F1-8D61-74FF97F3F3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F00CBE96-5245-47F1-8D61-74FF97F3F3AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -41,6 +41,14 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("FristName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -74,14 +82,6 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("fristName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("lastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -103,8 +103,8 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DateAndTime")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("DateAndTime")
+                        .HasColumnType("date");
 
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
@@ -146,8 +146,8 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DateTime")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("DateTime")
+                        .HasColumnType("date");
 
                     b.Property<string>("Day")
                         .IsRequired()
@@ -195,8 +195,8 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DateOfIllness")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("DateOfIllness")
+                        .HasColumnType("date");
 
                     b.Property<string>("DurationOfIllness")
                         .IsRequired()
@@ -231,12 +231,15 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("DateOfBirth")
+                        .HasColumnType("date");
 
                     b.Property<string>("Gender")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Height")
+                        .HasColumnType("int");
 
                     b.Property<string>("PatientId")
                         .HasColumnType("nvarchar(450)");
@@ -245,10 +248,7 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("height")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("width")
+                    b.Property<decimal>("Weigth")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
@@ -266,8 +266,8 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DateOfSurgery")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("DateOfSurgery")
+                        .HasColumnType("date");
 
                     b.Property<int?>("MedicalHistoryId")
                         .HasColumnType("int");
@@ -291,8 +291,9 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("BloodPressure")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("BloodPressure")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("HeartRate")
                         .HasColumnType("decimal(18,2)");
@@ -574,7 +575,8 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
 
             modelBuilder.Entity("Hospital_ManagementSystem.Core.Entity.PatientModule.RecordEnities.Record", b =>
                 {
-                    b.Navigation("MedicalHistory");
+                    b.Navigation("MedicalHistory")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

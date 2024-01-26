@@ -13,8 +13,8 @@ namespace Hospital_ManagementSystem.Repository.Data.Configuration.RecordConfigur
     {
         public void Configure(EntityTypeBuilder<Record> builder)
         {
-            builder.Property(R => R.width).HasColumnType("decimal(18,2)");
-            builder.HasOne(R => R.MedicalHistory).WithOne(M => M.Record).HasForeignKey<MedicalHistory>(M => M.RecordId).IsRequired();
+            builder.Property(R => R.Weigth).HasColumnType("decimal(18,2)");
+            builder.HasOne(R => R.MedicalHistory).WithOne(M => M.Record).IsRequired();
             
         }
     }

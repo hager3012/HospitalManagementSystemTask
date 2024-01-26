@@ -10,21 +10,16 @@ namespace Hospital_Management_System.ExtiensionMethod
     public static class IdentityServices
     {
         /// <summary>
-        /// Extension Method for IServicesCollection for add Identity functionalities 
+        /// Extension Method for Adds services for controllers to the specified <see cref="IServiceCollection"/>. This method will not
+        /// register services used for identity services.
         /// </summary>
-        /// <param name="builder.Configuration">An instance of the configuration.</param>
-        /// <returns>An instance of the services</returns>
+        /// <param name="services">The <see cref="IServiceCollection" /> to add services to.</param>
+        /// <param name="configuration">The <see cref="IConfiguration"/>to add configuration to.</param>
+        /// <returns>An <see cref="IServiceCollection"/> that can be used to further configure the App services.</returns>
         public static IServiceCollection AddIdentityServuces(this IServiceCollection services,IConfiguration configuration)
         {
             services.AddIdentity<Patient,IdentityRole>().AddEntityFrameworkStores<PatientDbContext>();
             services.AddScoped(typeof(IAuthServices), typeof(AuthServices));
-            //services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNegotiate();
-            //services.AddAuthorization(options =>
-            //{
-            //    // By default, all incoming requests will be authorized according to the default policy.
-            //    options.FallbackPolicy = options.DefaultPolicy;
-
-            //});
             return services;    
         }
     }

@@ -9,7 +9,7 @@ namespace Hospital_ManagementSystem.Core.Entity.Identity
 {
     public class Patient:IdentityUser
     {
-        public string fristName { get; set; }
-        public string lastName { get; set; }
+        public string FristName { get; set; }
+        public string LastName { get; set; }
     }
 }

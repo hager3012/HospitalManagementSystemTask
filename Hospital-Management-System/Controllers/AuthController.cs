@@ -29,8 +29,8 @@ namespace Hospital_Management_System.Controllers
                 return BadRequest(new ApiValidationResponse(400) { Errors = new string[] {"this email is used"} });
             var user = new Patient
             {
-                fristName = userRegister.FristName,
-                lastName = userRegister.LastName,
+                FristName = userRegister.FristName,
+                LastName = userRegister.LastName,
                 UserName = userRegister.Email.Split("@")[0],
                 Email = userRegister.Email,
                 PasswordHash = userRegister.Password

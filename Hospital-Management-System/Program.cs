@@ -33,6 +33,7 @@ namespace Hospital_Management_System
             //builder.Services.AddIdentityApiEndpoints<AppUser>().AddEntityFrameworkStores<userDbContext>();
 
             builder.Services.AddIdentityServuces(builder.Configuration);
+            builder.Services.AddAppServices();
             //builder.Services.AddCors(option =>
             //{
             //    option.AddPolicy("MyPolicy", option =>

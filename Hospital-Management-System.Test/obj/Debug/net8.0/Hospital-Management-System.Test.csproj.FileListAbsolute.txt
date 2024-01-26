@@ -32,7 +32,6 @@ D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug
 D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug\net8.0\microsoft.identitymodel.dll
 D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
 D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
@@ -168,3 +167,8 @@ D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\obj\Debug
 D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\obj\Debug\net8.0\Hospital-Management-System.Test.pdb
 D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\obj\Debug\net8.0\Hospital-Management-System.Test.genruntimeconfig.cache
 D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\obj\Debug\net8.0\ref\Hospital-Management-System.Test.dll
+D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug\net8.0\AutoMapper.dll
+D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug\net8.0\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+D:\testCode\Hospital-Management-System\Hospital-Management-System.Test\bin\Debug\net8.0\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll

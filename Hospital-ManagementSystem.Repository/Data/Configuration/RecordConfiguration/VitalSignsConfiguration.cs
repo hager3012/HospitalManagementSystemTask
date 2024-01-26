@@ -13,7 +13,6 @@ namespace Hospital_ManagementSystem.Repository.Data.Configuration.RecordConfigur
     {
         public void Configure(EntityTypeBuilder<VitalSigns> builder)
         {
-            builder.Property(V => V.BloodPressure).HasColumnType("decimal(18,2)");
             builder.Property(V => V.Temperature).HasColumnType("decimal(18,2)");
             builder.Property(V => V.RespiratoryRate).HasColumnType("decimal(18,2)");
             builder.Property(V => V.HeartRate).HasColumnType("decimal(18,2)");

@@ -13,7 +13,7 @@ namespace Hospital_ManagementSystem.Repository.Data.Configuration.RecordConfigur
     {
         public void Configure(EntityTypeBuilder<MedicalHistory> builder)
         {
-            //builder.OwnsOne(M => M.VitalSigns, M => M.WithOwner());
+            //builder.OwnsMany(M => M.VitalSigns, M => M.WithOwner());
         }
     }
 }

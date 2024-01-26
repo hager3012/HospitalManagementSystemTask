@@ -11,7 +11,7 @@ namespace Hospital_ManagementSystem.Core.Entity.PatientModule
     public class Appointment:BaseEntity
     {
         public Doctor Doctor{ get; set; }
-        public DateTime DateAndTime { get; set; }
+        public DateOnly DateAndTime { get; set; }
         public Patient  Patient { get; set; }
     }
 }

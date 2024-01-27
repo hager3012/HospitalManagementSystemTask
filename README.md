@@ -46,11 +46,3 @@ The Patient Module is an integral component of our healthcare system, designed t
 
 - **Appointment Cancellation:**
   - Allow patients to cancel appointments when necessary.
-
-### 8. Register Room or Cancel
-
-- **Room Registration:**
-  - Patients can request or register for available rooms within the healthcare facility.
-
-- **Room Cancellation:**
-  - Provide the option to cancel room registrations when plans change.

@@ -168,3 +168,5 @@ D:\testCode\Hospital-Management-System\Hospital-Management-System.Tests\obj\Debu
 D:\testCode\Hospital-Management-System\Hospital-Management-System.Tests\obj\Debug\net8.0\Hospital-Management-System.Tests.pdb
 D:\testCode\Hospital-Management-System\Hospital-Management-System.Tests\obj\Debug\net8.0\Hospital-Management-System.Tests.genruntimeconfig.cache
 D:\testCode\Hospital-Management-System\Hospital-Management-System.Tests\obj\Debug\net8.0\ref\Hospital-Management-System.Tests.dll
+D:\testCode\Hospital-Management-System\Hospital-Management-System.Tests\bin\Debug\net8.0\Castle.Core.dll
+D:\testCode\Hospital-Management-System\Hospital-Management-System.Tests\bin\Debug\net8.0\Moq.dll

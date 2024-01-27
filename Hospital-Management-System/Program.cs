@@ -54,7 +54,7 @@ namespace Hospital_Management_System
             //app.UseStaticFiles();
             //app.UseCors("MyPolicy");
             app.UseAuthentication();
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
 
             app.MapControllers();

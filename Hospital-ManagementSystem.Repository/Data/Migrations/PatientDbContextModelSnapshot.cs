@@ -103,7 +103,7 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateOnly>("DateAndTime")
+                    b.Property<DateOnly>("Date")
                         .HasColumnType("date");
 
                     b.Property<int>("DoctorId")
@@ -111,6 +111,9 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
 
                     b.Property<string>("PatientId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<TimeSpan>("Time")
+                        .HasColumnType("time");
 
                     b.HasKey("Id");
 
@@ -150,21 +153,56 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateOnly>("DateTime")
+                    b.Property<DateOnly>("Date")
                         .HasColumnType("date");
 
                     b.Property<string>("Day")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("DoctorId")
+                    b.Property<int>("DoctorId")
                         .HasColumnType("int");
+
+                    b.Property<TimeSpan>("Time")
+                        .HasColumnType("time");
 
                     b.HasKey("Id");
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("DoctorSchedule");
+                    b.ToTable("DoctorSchedules");
+                });
+
+            modelBuilder.Entity("Hospital_ManagementSystem.Core.Entity.PatientModule.Prescription", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MedicationDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MedicationName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoctorId");
+
+                    b.HasIndex("PatientId");
+
+                    b.ToTable("Prescriptions");
                 });
 
             modelBuilder.Entity("Hospital_ManagementSystem.Core.Entity.PatientModule.RecordEnities.MedicalHistory", b =>
@@ -466,9 +504,32 @@ namespace Hospital_ManagementSystem.Repository.Data.Migrations
 
             modelBuilder.Entity("Hospital_ManagementSystem.Core.Entity.PatientModule.DoctorSchedule", b =>
                 {
-                    b.HasOne("Hospital_ManagementSystem.Core.Entity.PatientModule.Doctor", null)
+                    b.HasOne("Hospital_ManagementSystem.Core.Entity.PatientModule.Doctor", "Doctor")
                         .WithMany("Schedules")
-                        .HasForeignKey("DoctorId");
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+                });
+
+            modelBuilder.Entity("Hospital_ManagementSystem.Core.Entity.PatientModule.Prescription", b =>
+                {
+                    b.HasOne("Hospital_ManagementSystem.Core.Entity.PatientModule.Doctor", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Hospital_ManagementSystem.Core.Entity.Identity.Patient", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("Hospital_ManagementSystem.Core.Entity.PatientModule.RecordEnities.MedicalHistory", b =>

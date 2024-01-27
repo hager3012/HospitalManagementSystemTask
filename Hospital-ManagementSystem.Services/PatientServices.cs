@@ -1,4 +1,5 @@
-﻿using Hospital_ManagementSystem.Core.Entity.PatientModule;
+﻿using Hospital_ManagementSystem.Core.Entity.Identity;
+using Hospital_ManagementSystem.Core.Entity.PatientModule;
 using Hospital_ManagementSystem.Core.Services.Contract;
 using Hospital_ManagementSystem.Repository.Data;
 using Microsoft.EntityFrameworkCore;
@@ -18,10 +19,24 @@ namespace Hospital_ManagementSystem.Services
         {
             _patientDbContext = patientDbContext;
         }
-        public async Task<List<Doctor>?> GetDoctorsAsync()
+
+        public async Task<Patient?> GetPatientInfoAsync(string patientId)
         {
-            var doctors =await _patientDbContext.Doctors.ToListAsync();
-            return doctors;
+            var patient = await _patientDbContext.Set<Patient>().Where(P => P.Id== patientId).FirstOrDefaultAsync();
+            return patient;
+        }
+        public async Task<int> UpdatePatientInfoAsync(string  PatientId, Patient PatientModel)
+        {
+            var patient = await _patientDbContext.Set<Patient>().FirstOrDefaultAsync(P => P.Id == PatientId);
+            if (patient is null)
+                return 0;
+            patient.FristName = PatientModel.FristName;
+            patient.LastName = PatientModel.LastName;
+            patient.Email = PatientModel.Email;
+            patient.UserName = PatientModel.UserName;
+
+            var patientUpdated = _patientDbContext.SaveChanges();
+            return patientUpdated;
         }
     }
 }

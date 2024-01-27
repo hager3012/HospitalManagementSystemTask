@@ -30,5 +30,7 @@ namespace Hospital_ManagementSystem.Repository.Data
         public DbSet<VitalSigns> VitalSigns { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<DoctorSchedule> DoctorSchedules { get; set; }
+        public DbSet<Prescription> Prescriptions { get; set; }
     }
 }

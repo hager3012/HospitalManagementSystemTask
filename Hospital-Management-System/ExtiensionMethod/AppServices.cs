@@ -17,6 +17,8 @@ namespace Hospital_Management_System.ExtiensionMethod
             services.AddScoped(typeof(IRecordServices), typeof(RecordServices));
             services.AddAutoMapper(typeof(MapperProfile));
             services.AddScoped(typeof(IPatientServices), typeof(PatientServices));
+            services.AddScoped(typeof(IDoctorServices), typeof(DoctorServices));
+            services.AddScoped(typeof(IAppointmentServices), typeof(AppointmentServices));
             return services;
         }
     }

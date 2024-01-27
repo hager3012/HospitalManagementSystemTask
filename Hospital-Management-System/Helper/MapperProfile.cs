@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Hospital_Management_System.Dtos;
+using Hospital_ManagementSystem.Core.Entity.Identity;
 using Hospital_ManagementSystem.Core.Entity.PatientModule;
 using Hospital_ManagementSystem.Core.Entity.PatientModule.RecordEnities;
 
@@ -19,6 +20,15 @@ namespace Hospital_Management_System.Helper
             CreateMap<Past_illnesses, past_IllnessesDto>();
             CreateMap<VitalSigns,vitalSignsDto>();
             CreateMap<Doctor, DoctorToReturnDto>();
+            CreateMap<Patient, PatientInfoDto>().ReverseMap();
+            CreateMap<DoctorSchedule, DoctorScheduleDto>()
+               .ForMember(d => d.DoctorName, o => o.MapFrom(s => s.Doctor.FullName))
+               .ForMember(d => d.DoctorSpecialization, o => o.MapFrom(s => s.Doctor.Specialization));
+            CreateMap< AppointmentRequestDto,Appointment>();
+            CreateMap<Appointment, AppointmentReturnDto>()
+               .ForMember(d => d.DoctorName, o => o.MapFrom(s => s.Doctor.FullName))
+               .ForMember(d => d.DoctorSpecialization, o => o.MapFrom(s => s.Doctor.Specialization))
+               .ForMember(d => d.AppointmentId,o => o.MapFrom(s => s.Id));
         }
     }
 }

@@ -21,18 +21,13 @@ namespace Hospital_ManagementSystem.Services
         {
             _configuration = configuration;
         }
-        /// <summary>
-        /// Create Token Async
-        /// </summary>
-        /// <param name="user">An instance of AppUser.</param>
-        /// <param name="manager">An instance of UserManager</param>
-        /// <returns>string token</returns>
         public async Task<string> CreateTokenAsync(Patient user, UserManager<Patient> manager)
         {
             var authClaims = new List<Claim>()
             {
                 new Claim(ClaimTypes.GivenName,user.UserName),
-                new Claim(ClaimTypes.Email,user.Email)
+                new Claim(ClaimTypes.Email,user.Email),
+                new Claim(ClaimTypes.NameIdentifier,user.Id)
             };
             var userRole = await manager.GetRolesAsync(user);
             foreach (var role in userRole)
@@ -55,5 +50,11 @@ namespace Hospital_ManagementSystem.Services
             var tokenString = tokenHandler.WriteToken(token);
             return tokenString;
         }
+        /// <summary>
+        /// Create Token Async
+        /// </summary>
+        /// <param name="user">An instance of AppUser.</param>
+        /// <param name="manager">An instance of UserManager</param>
+        /// <returns>string token</returns>
     }
 }

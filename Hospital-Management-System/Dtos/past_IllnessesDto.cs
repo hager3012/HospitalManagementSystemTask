@@ -1,4 +1,6 @@
-﻿namespace Hospital_Management_System.Dtos
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Hospital_Management_System.Dtos
 {
     public class past_IllnessesDto
     {

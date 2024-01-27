@@ -19,6 +19,7 @@ namespace Hospital_Management_System.ExtiensionMethod
             services.AddScoped(typeof(IPatientServices), typeof(PatientServices));
             services.AddScoped(typeof(IDoctorServices), typeof(DoctorServices));
             services.AddScoped(typeof(IAppointmentServices), typeof(AppointmentServices));
+            services.AddScoped(typeof(IPrescriptionServices), typeof(PrescriptionServices));
             return services;
         }
     }

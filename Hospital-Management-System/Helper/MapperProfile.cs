@@ -29,6 +29,9 @@ namespace Hospital_Management_System.Helper
                .ForMember(d => d.DoctorName, o => o.MapFrom(s => s.Doctor.FullName))
                .ForMember(d => d.DoctorSpecialization, o => o.MapFrom(s => s.Doctor.Specialization))
                .ForMember(d => d.AppointmentId,o => o.MapFrom(s => s.Id));
+            CreateMap<Prescription, PrescriptionToReturnDto>()
+                .ForMember(d => d.DoctorName, o => o.MapFrom(s => s.Doctor.FullName))
+                .ForMember(d => d.DoctorSpecialization, o => o.MapFrom(s => s.Doctor.Specialization));
         }
     }
 }

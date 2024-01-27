@@ -35,6 +35,9 @@ The Patient Module is an integral component of our healthcare system, designed t
 
 - **Upcoming Appointments:**
   - Retrieve a list of upcoming appointments with details such as date, time, and assigned healthcare provider.
+- **Displaying Available Time Slots:**
+  - When a patient logs into the system, they should see a list of available time slots based on the selected doctor's schedule.
+  - Time slots should be displayed with relevant details such as the date, time, and doctor's name.
 
 ### 7. Register an Appointment with Doctor or Cancel
 

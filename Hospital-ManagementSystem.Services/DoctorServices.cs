@@ -18,12 +18,27 @@ namespace Hospital_ManagementSystem.Services
         {
             _dbContext = dbContext;
         }
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// Get All Doctors Async
+        /// </summary>
+        /// <returns>List of Doctor</returns>
+>>>>>>> feature/Authentication
         public async Task<List<Doctor>?> GetDoctorsAsync()
         {
             var doctors = await _dbContext.Doctors.ToListAsync();
             return doctors;
         }
+<<<<<<< HEAD
 
+=======
+        /// <summary>
+        /// Get All schedules Async for specific doctor
+        /// </summary>
+        /// <param name="doctorId">int doctor Id</param>
+        /// <returns>List of Doctor Schedule </returns>
+>>>>>>> feature/Authentication
         public async Task<List<DoctorSchedule>?> GetDoctorSchedulesAsync(int doctorId)
         {
             var doctorSchedules = await _dbContext.DoctorSchedules.Where(d => d.DoctorId == doctorId).Include(d => d.Doctor).ToListAsync();

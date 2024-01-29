@@ -18,7 +18,15 @@ namespace Hospital_ManagementSystem.Services
         {
             _patientDbContext = patientDbContext;
         }
+<<<<<<< HEAD
 
+=======
+        /// <summary>
+        /// Get record for specific patient
+        /// </summary>
+        /// <param name="patientId">string patient id</param>
+        /// <returns> for specific patient</returns>
+>>>>>>> feature/Authentication
         public async Task<Record?> ViewRecord(string IdPatient)
         {
             var record =await  _patientDbContext.Records.Where(R => R.PatientId==IdPatient).Include(R => R.Patient)

@@ -19,12 +19,29 @@ namespace Hospital_ManagementSystem.Services
         {
             _patientDbContext = patientDbContext;
         }
+<<<<<<< HEAD
 
+=======
+        /// <summary>
+        /// Get patient information for specific patient
+        /// </summary>
+        /// <param name="patientId">string patient id</param>
+        /// <returns>patient information</returns>
+>>>>>>> feature/Authentication
         public async Task<Patient?> GetPatientInfoAsync(string patientId)
         {
             var patient = await _patientDbContext.Set<Patient>().Where(P => P.Id== patientId).FirstOrDefaultAsync();
             return patient;
         }
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// update patient information for specific patient
+        /// </summary>
+        /// <param name="patientId">string patient id</param>
+        /// <param name="PatientModel">object for patient</param>
+        /// <returns>number of row affected</returns>
+>>>>>>> feature/Authentication
         public async Task<int> UpdatePatientInfoAsync(string  PatientId, Patient PatientModel)
         {
             var patient = await _patientDbContext.Set<Patient>().FirstOrDefaultAsync(P => P.Id == PatientId);

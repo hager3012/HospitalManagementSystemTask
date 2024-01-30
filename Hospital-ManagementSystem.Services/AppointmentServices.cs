@@ -18,6 +18,11 @@ namespace Hospital_ManagementSystem.Services
         {
             _dbContext = dbContext;
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
         /// <summary>
         /// Book Appointment for patient 
         /// </summary>
@@ -26,6 +31,10 @@ namespace Hospital_ManagementSystem.Services
         /// <returns>0 if faild Booking
         /// 1 if Success
         /// -1 if theis patient have appointment in this time </returns>
+<<<<<<< HEAD
+=======
+>>>>>>> feature/Authentication
+>>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
         public async Task<int> BookAppointment(string pateintId, Appointment appointment)
         {
             var checkBookAvilable =await _dbContext.Appointments.Where(A => A.Patient.Id == pateintId && 
@@ -36,23 +45,43 @@ namespace Hospital_ManagementSystem.Services
             return _dbContext.SaveChanges();
 
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
         /// <summary>
         /// Cancel Appointment for patient 
         /// </summary>
         /// <param name="appointmentId">int Appointment Id</param>
         /// <returns>0 if faild Cancel 
         /// 1 if Success </returns>
+<<<<<<< HEAD
+=======
+>>>>>>> feature/Authentication
+>>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
         public async Task<int> CancelAppointment(int appointmentId)
         {
             var appointmentCancel = await _dbContext.Appointments.FirstOrDefaultAsync(A => A.Id == appointmentId);
             _dbContext.Appointments.Remove(appointmentCancel);
             return _dbContext.SaveChanges();
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
         /// <summary>
         /// Get All Appointment for patient 
         /// </summary>
         /// <param name="pateintId">string patient Id</param>
         /// <returns>List of Appointment</returns>
+<<<<<<< HEAD
+=======
+>>>>>>> feature/Authentication
+>>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
         public async Task<List<Appointment>> GetAppointments(string pateintId)
         {
             var appointments = await _dbContext.Appointments.Where(A => A.Patient.Id == pateintId).Include(A => A.Doctor).ToListAsync();

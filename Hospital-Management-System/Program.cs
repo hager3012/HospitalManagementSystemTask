@@ -20,27 +20,11 @@ namespace Hospital_Management_System
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            //builder.Services.AddDbContext<userDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnectionString")));
+    
             builder.Services.AddDbContext<PatientDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("AppConnectionString")));
-            //builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
-            //    .AddNegotiate();
-
-            //builder.Services.AddAuthorization(options =>
-            //{
-            //    // By default, all incoming requests will be authorized according to the default policy.
-            //    options.FallbackPolicy = options.DefaultPolicy;
-            //});
-            //builder.Services.AddIdentityApiEndpoints<AppUser>().AddEntityFrameworkStores<userDbContext>();
 
             builder.Services.AddIdentityServuces(builder.Configuration);
             builder.Services.AddAppServices();
-            //builder.Services.AddCors(option =>
-            //{
-            //    option.AddPolicy("MyPolicy", option =>
-            //    {
-            //        option.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
-            //    });
-            //});
             var app = builder.Build();
             
             // Configure the HTTP request pipeline.
@@ -49,10 +33,7 @@ namespace Hospital_Management_System
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-            //app.MapIdentityApi<AppUser>();
             app.UseHttpsRedirection();
-            //app.UseStaticFiles();
-            //app.UseCors("MyPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
 

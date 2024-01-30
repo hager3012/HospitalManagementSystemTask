@@ -8927,11 +8927,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\testCode\\Hospital-Management-System\\Hospital-Management-System.Tests\\Hospital-Management-System.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-Management-System.Tests\\Hospital-Management-System.Tests.csproj",
       "projectName": "Hospital-Management-System.Tests",
-      "projectPath": "D:\\testCode\\Hospital-Management-System\\Hospital-Management-System.Tests\\Hospital-Management-System.Tests.csproj",
+      "projectPath": "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-Management-System.Tests\\Hospital-Management-System.Tests.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\testCode\\Hospital-Management-System\\Hospital-Management-System.Tests\\obj\\",
+      "outputPath": "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-Management-System.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8948,17 +8948,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\testCode\\Hospital-Management-System\\Hospital-Management-System\\Hospital-Management-System.csproj": {
-              "projectPath": "D:\\testCode\\Hospital-Management-System\\Hospital-Management-System\\Hospital-Management-System.csproj"
+            "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-Management-System\\Hospital-Management-System.csproj": {
+              "projectPath": "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-Management-System\\Hospital-Management-System.csproj"
             },
-            "D:\\testCode\\Hospital-Management-System\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj": {
-              "projectPath": "D:\\testCode\\Hospital-Management-System\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj"
+            "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj": {
+              "projectPath": "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj"
             },
-            "D:\\testCode\\Hospital-Management-System\\Hospital-ManagementSystem.Repository\\Hospital-ManagementSystem.Repository.csproj": {
-              "projectPath": "D:\\testCode\\Hospital-Management-System\\Hospital-ManagementSystem.Repository\\Hospital-ManagementSystem.Repository.csproj"
+            "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-ManagementSystem.Repository\\Hospital-ManagementSystem.Repository.csproj": {
+              "projectPath": "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-ManagementSystem.Repository\\Hospital-ManagementSystem.Repository.csproj"
             },
-            "D:\\testCode\\Hospital-Management-System\\Hospital-ManagementSystem.Services\\Hospital-ManagementSystem.Services.csproj": {
-              "projectPath": "D:\\testCode\\Hospital-Management-System\\Hospital-ManagementSystem.Services\\Hospital-ManagementSystem.Services.csproj"
+            "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-ManagementSystem.Services\\Hospital-ManagementSystem.Services.csproj": {
+              "projectPath": "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-ManagementSystem.Services\\Hospital-ManagementSystem.Services.csproj"
             }
           }
         }

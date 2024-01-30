@@ -10,12 +10,18 @@ namespace Hospital_Management_System.Tests
 {
     public static class ContextGenerator
     {
+        private static PatientDbContext Context;
         public static PatientDbContext Generator()
         {
-            var options = new DbContextOptionsBuilder<PatientDbContext>()
-                .UseInMemoryDatabase(databaseName: "HospitalManagementSystem")
-                .Options;
-            return new PatientDbContext(options);
+            if(Context == null)
+            {
+                var options = new DbContextOptionsBuilder<PatientDbContext>()
+               .UseInMemoryDatabase(databaseName: "HospitalManagementSystem")
+               .Options;
+                Context = new PatientDbContext(options);
+            }
+           
+            return Context;
         }
     }
 }

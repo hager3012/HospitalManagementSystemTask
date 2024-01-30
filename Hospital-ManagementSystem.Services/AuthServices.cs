@@ -21,6 +21,12 @@ namespace Hospital_ManagementSystem.Services
         {
             _configuration = configuration;
         }
+        /// <summary>
+        /// Create Token Async
+        /// </summary>
+        /// <param name="user">object from Patient</param>
+        /// <param name="manager">object from UserManger to proivde Api for manage patient </param>
+        /// <returns>string token</returns>
         public async Task<string> CreateTokenAsync(Patient user, UserManager<Patient> manager)
         {
             var authClaims = new List<Claim>()
@@ -50,11 +56,5 @@ namespace Hospital_ManagementSystem.Services
             var tokenString = tokenHandler.WriteToken(token);
             return tokenString;
         }
-        /// <summary>
-        /// Create Token Async
-        /// </summary>
-        /// <param name="user">An instance of AppUser.</param>
-        /// <param name="manager">An instance of UserManager</param>
-        /// <returns>string token</returns>
     }
 }

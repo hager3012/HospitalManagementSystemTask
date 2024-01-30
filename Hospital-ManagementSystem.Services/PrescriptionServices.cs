@@ -18,41 +18,38 @@ namespace Hospital_ManagementSystem.Services
         {
             _dbContext = dbContext;
         }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
+
         /// <summary>
-        /// Get all Prescriptions for specific patient
+        /// Retrieves a list of all prescriptions associated with a specific patient.
         /// </summary>
-        /// <param name="patientId">string patient id</param>
-        /// <returns>list all prescriptions for specific patient</returns>
-<<<<<<< HEAD
-=======
->>>>>>> feature/Authentication
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
+        /// <param name="patientId">The unique identifier of the patient.</param>
+        /// <returns>A list of prescriptions for the specified patient.</returns>
+        /// <remarks>
+        /// This method fetches all prescriptions linked to the provided patient identifier.
+        /// </remarks>
+        /// /// <remarks>
+        /// The returned list may be empty if the patient has no prescriptions.
+        /// </remarks>
         public async Task<List<Prescription>> GetAllPrescriptionsForPatient(string patientId)
         {
             var prescriptions = await _dbContext.Prescriptions.Where(P => P.PatientId == patientId).Include(P => P.Doctor).ToListAsync();
             return prescriptions;
         }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
         /// <summary>
-        /// Get Prescription for specific patient
+        /// Retrieves the prescriptions for a specific patient based on the patient's ID and the doctor's ID.
         /// </summary>
-        /// <param name="patientId">string patient id</param>
-        /// <param name="doctorId">int doctor id</param>
-        /// <returns>prescriptions for specific patient</returns>
-<<<<<<< HEAD
-=======
->>>>>>> feature/Authentication
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
+        /// <param name="patientId">The unique identifier of the patient (string).</param>
+        /// <param name="doctorId">The unique identifier of the doctor (int).</param>
+        /// <returns>
+        /// A collection of prescriptions associated with the specified patient.
+        /// Each prescription object contains details such as medication, dosage, and instructions.
+        /// If no prescriptions are found, an empty collection is returned.
+        /// </returns>
+        /// <remarks>
+        /// This method fetches the prescriptions for a specific patient as recorded by the doctor.
+        /// The patient's ID is used to identify the patient, and the doctor's ID is used to ensure
+        /// that only prescriptions from the authorized doctor are retrieved.
+        /// </remarks>
         public async Task<Prescription?> GetPrescription(string patientId, int doctorId)
         {
             var prescription = await _dbContext.Prescriptions.Where(P => P.PatientId == patientId && P.DoctorId == doctorId).Include(P => P.Doctor).FirstOrDefaultAsync();

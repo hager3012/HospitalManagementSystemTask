@@ -19,41 +19,31 @@ namespace Hospital_ManagementSystem.Services
         {
             _patientDbContext = patientDbContext;
         }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
         /// <summary>
-        /// Get patient information for specific patient
+        /// Retrieves detailed information about a specific patient based on their unique identifier.
         /// </summary>
-        /// <param name="patientId">string patient id</param>
-        /// <returns>patient information</returns>
-<<<<<<< HEAD
-=======
->>>>>>> feature/Authentication
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
+        /// <param name="patientId">A string representing the unique identifier of the patient.</param>
+        /// <returns>
+        /// Returns an object containing comprehensive information about the patient,
+        /// including their personal details, medical history, and contact information.
+        /// </returns>
+        /// <remarks>
+        /// This method provides a detailed snapshot of the patient's information.
+        /// </remarks>
         public async Task<Patient?> GetPatientInfoAsync(string patientId)
         {
             var patient = await _patientDbContext.Set<Patient>().Where(P => P.Id== patientId).FirstOrDefaultAsync();
             return patient;
         }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
         /// <summary>
-        /// update patient information for specific patient
+        /// Updates patient information for a specific patient identified by the provided patient ID.
         /// </summary>
-        /// <param name="patientId">string patient id</param>
-        /// <param name="PatientModel">object for patient</param>
-        /// <returns>number of row affected</returns>
-<<<<<<< HEAD
-=======
->>>>>>> feature/Authentication
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
+        /// <param name="PatientId">A unique string identifier for the patient.</param>
+        /// <param name="PatientModel">An object containing updated patient information.</param>
+        /// <returns>The number of rows affected in the database after the update operation.</returns>
+        /// <remarks>
+        /// This method allows you to modify the information of a patient in the system.
+        /// </remarks>
         public async Task<int> UpdatePatientInfoAsync(string  PatientId, Patient PatientModel)
         {
             var patient = await _patientDbContext.Set<Patient>().FirstOrDefaultAsync(P => P.Id == PatientId);

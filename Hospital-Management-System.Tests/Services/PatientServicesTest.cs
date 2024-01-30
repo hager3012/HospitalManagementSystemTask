@@ -1,26 +1,20 @@
 ﻿using Hospital_ManagementSystem.Core.Entity.Identity;
 using Hospital_ManagementSystem.Core.Entity.PatientModule;
 using Hospital_ManagementSystem.Services;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-=======
-<<<<<<< HEAD
 using System;
 using System.Collections.Generic;
-=======
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
->>>>>>> feature/Authentication
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -98,13 +92,5 @@ namespace Hospital_Management_System.Tests.Services
             // Assert
             Assert.Null(result);
         }
-<<<<<<< HEAD
-       
-=======
-<<<<<<< HEAD
-=======
-       
->>>>>>> feature/Authentication
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
     }
 }

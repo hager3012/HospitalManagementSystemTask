@@ -18,27 +18,29 @@ namespace Hospital_ManagementSystem.Services
         {
             _dbContext = dbContext;
         }
-<<<<<<< HEAD
-=======
+
         /// <summary>
-        /// Get All Doctors Async
+        /// Asynchronously retrieves a list of all doctors from the database.
         /// </summary>
-        /// <returns>List of Doctor</returns>
->>>>>>> feature/Authentication
+        /// <returns>
+        /// A task representing the asynchronous operation. The task result is a list of Doctor objects.
+        /// </returns>
         public async Task<List<Doctor>?> GetDoctorsAsync()
         {
             var doctors = await _dbContext.Doctors.ToListAsync();
             return doctors;
         }
-<<<<<<< HEAD
 
-=======
         /// <summary>
-        /// Get All schedules Async for specific doctor
+        /// Asynchronously retrieves all schedules for a specific doctor.
         /// </summary>
-        /// <param name="doctorId">int doctor Id</param>
-        /// <returns>List of Doctor Schedule </returns>
->>>>>>> feature/Authentication
+        /// <param name="doctorId">The unique identifier of the doctor.</param>
+        /// <returns>
+        /// A list of <see cref="DoctorSchedule"/> objects representing the schedules associated with the specified doctor.
+        /// </returns>
+        /// <remarks>
+        /// This method retrieves the schedules for a specific doctor based on the provided <paramref name="doctorId"/>.
+        /// </remarks>
         public async Task<List<DoctorSchedule>?> GetDoctorSchedulesAsync(int doctorId)
         {
             var doctorSchedules = await _dbContext.DoctorSchedules.Where(d => d.DoctorId == doctorId).Include(d => d.Doctor).ToListAsync();

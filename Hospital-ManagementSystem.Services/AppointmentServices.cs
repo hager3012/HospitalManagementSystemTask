@@ -18,23 +18,22 @@ namespace Hospital_ManagementSystem.Services
         {
             _dbContext = dbContext;
         }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
+
         /// <summary>
-        /// Book Appointment for patient 
+        /// Books an appointment for a patient.
         /// </summary>
-        /// <param name="pateintId">string patient Id</param>
-        /// <param name="appointment">object from Appointment To Book Appointment </param>
-        /// <returns>0 if faild Booking
-        /// 1 if Success
-        /// -1 if theis patient have appointment in this time </returns>
-<<<<<<< HEAD
-=======
->>>>>>> feature/Authentication
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
+        /// <param name="patientId">The unique identifier of the patient (string).</param>
+        /// <param name="appointment">The appointment details to book (Appointment object).</param>
+        /// <returns>
+        ///  1: Successful booking.
+        ///  0: Failed booking.
+        /// -1: The patient already has an appointment at the specified time.
+        /// </returns>
+        /// <remarks>
+        /// The method attempts to schedule an appointment for the specified patient at the given time.
+        /// Returns 1 if the booking is successful, 0 if the booking fails, and -1 if the patient already
+        /// has an appointment at the specified time.
+        /// </remarks>
         public async Task<int> BookAppointment(string pateintId, Appointment appointment)
         {
             var checkBookAvilable =await _dbContext.Appointments.Where(A => A.Patient.Id == pateintId && 
@@ -45,43 +44,29 @@ namespace Hospital_ManagementSystem.Services
             return _dbContext.SaveChanges();
 
         }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
-        /// <summary>
-        /// Cancel Appointment for patient 
-        /// </summary>
-        /// <param name="appointmentId">int Appointment Id</param>
-        /// <returns>0 if faild Cancel 
-        /// 1 if Success </returns>
-<<<<<<< HEAD
-=======
->>>>>>> feature/Authentication
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
+/// <summary>
+/// Cancels an appointment for a patient based on the provided appointment ID.
+/// </summary>
+/// <param name="appointmentId">The unique identifier of the appointment to be canceled.</param>
+/// <returns>
+/// 0 if the cancellation failed.
+/// 1 if the cancellation was successful.
+/// </returns>
         public async Task<int> CancelAppointment(int appointmentId)
         {
             var appointmentCancel = await _dbContext.Appointments.FirstOrDefaultAsync(A => A.Id == appointmentId);
             _dbContext.Appointments.Remove(appointmentCancel);
             return _dbContext.SaveChanges();
         }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
-=======
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
-        /// <summary>
-        /// Get All Appointment for patient 
-        /// </summary>
-        /// <param name="pateintId">string patient Id</param>
-        /// <returns>List of Appointment</returns>
-<<<<<<< HEAD
-=======
->>>>>>> feature/Authentication
->>>>>>> 6d8b2c61e22d9027be0c68d3f088689c50f0f4b6
+/// <summary>
+/// Retrieves a list of all appointments for a specific patient.
+/// </summary>
+/// <param name="patientId">The unique identifier for the patient (string).</param>
+/// <returns>A list of Appointment objects representing the patient's appointments.</returns>
+/// <remarks>
+/// This method fetches all appointments associated with the specified patient ID.
+/// </remarks>
         public async Task<List<Appointment>> GetAppointments(string pateintId)
         {
             var appointments = await _dbContext.Appointments.Where(A => A.Patient.Id == pateintId).Include(A => A.Doctor).ToListAsync();

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Hospital_Management_System.Tests
-build_property.ProjectDir = C:\Users\user\Downloads\Hospital-Management-System\Hospital-Management-System\Hospital-Management-System.Tests\
+build_property.ProjectDir = C:\Users\user\Downloads\HospitalMagagementSystem\Hospital-Management-System.Tests\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -2858,11 +2858,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-ManagementSystem.Repository\\Hospital-ManagementSystem.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Downloads\\HospitalMagagementSystem\\Hospital-ManagementSystem.Repository\\Hospital-ManagementSystem.Repository.csproj",
       "projectName": "Hospital-ManagementSystem.Repository",
-      "projectPath": "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-ManagementSystem.Repository\\Hospital-ManagementSystem.Repository.csproj",
+      "projectPath": "C:\\Users\\user\\Downloads\\HospitalMagagementSystem\\Hospital-ManagementSystem.Repository\\Hospital-ManagementSystem.Repository.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-ManagementSystem.Repository\\obj\\",
+      "outputPath": "C:\\Users\\user\\Downloads\\HospitalMagagementSystem\\Hospital-ManagementSystem.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2879,8 +2879,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj": {
-              "projectPath": "C:\\Users\\user\\Downloads\\Hospital-Management-System\\Hospital-Management-System\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj"
+            "C:\\Users\\user\\Downloads\\HospitalMagagementSystem\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj": {
+              "projectPath": "C:\\Users\\user\\Downloads\\HospitalMagagementSystem\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj"
             }
           }
         }

@@ -18,6 +18,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hospital_ManagementSystem.Repository.Data;
 
 namespace Hospital_Management_System.Tests.Services
 {
@@ -37,15 +38,22 @@ namespace Hospital_Management_System.Tests.Services
             LastName = "Shabaan",
             Email = "hagershaaban7@gmail.com"
         };
+        private static PatientServices patientServices;
         private   async Task<PatientServices> CreateObjectOfPatient(Patient patient=null)
         {
-             var context = ContextGenerator.Generator();
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-            
-            context.AddRange(patient);
-           await context.SaveChangesAsync();
-            var patientServices = new PatientServices(context);
+            if(patientServices is null)
+            {
+                var context = ContextGenerator.Generator();
+
+                context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();
+
+                context.AddRange(patient);
+                await context.SaveChangesAsync();
+
+                patientServices = new PatientServices(context);
+            }
+             
 
             return patientServices;
         }

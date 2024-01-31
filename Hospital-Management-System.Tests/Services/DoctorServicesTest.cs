@@ -1,4 +1,5 @@
-﻿using Hospital_ManagementSystem.Core.Entity.PatientModule;
+﻿using Hospital_ManagementSystem.Core.Entity.Identity;
+using Hospital_ManagementSystem.Core.Entity.PatientModule;
 using Hospital_ManagementSystem.Services;
 using System;
 using System.Collections.Generic;
@@ -10,17 +11,9 @@ namespace Hospital_Management_System.Tests.Services
 {
     public class DoctorServicesTest
     {
-        [Fact]
-        public async Task GetDoctors_ReturnDoctors()
+        public List<Doctor> Doctors { get; set; } = new List<Doctor>
         {
-            //Arrange
-            using var context = ContextGenerator.Generator();
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-            // Add test data to the in-memory database
-            var doctors = new List<Doctor>
-            {
-                new Doctor
+            new Doctor
                 {
                     FullName = "John Doe",
                     Specialization = "Cardiology"
@@ -30,12 +23,46 @@ namespace Hospital_Management_System.Tests.Services
                     FullName = "Jane Smith",
                     Specialization = "Cardiology"
                 }
+        };
+        private async Task<DoctorServices> CreateObjectOfPatient(List<Doctor> doctor = null)
+        {
+            var context = ContextGenerator.Generator();
+            context.Database.EnsureDeleted();
+            context.Database.EnsureCreated();
 
-            };
-            context.AddRange(doctors);
-            context.SaveChanges();
-
+            context.AddRange(doctor);
+            await context.SaveChangesAsync();
             var doctorServices = new DoctorServices(context);
+
+            return doctorServices;
+        }
+        [Fact]
+        public async Task GetDoctors_ReturnDoctors()
+        {
+            //Arrange
+            //using var context = ContextGenerator.Generator();
+            //context.Database.EnsureDeleted();
+            //context.Database.EnsureCreated();
+            //// Add test data to the in-memory database
+            //var doctors = new List<Doctor>
+            //{
+            //    new Doctor
+            //    {
+            //        FullName = "John Doe",
+            //        Specialization = "Cardiology"
+            //    },
+            //    new Doctor
+            //    {
+            //        FullName = "Jane Smith",
+            //        Specialization = "Cardiology"
+            //    }
+
+            //};
+            //context.AddRange(doctors);
+            //context.SaveChanges();
+
+            //var doctorServices = new DoctorServices(context);
+            var doctorServices = await CreateObjectOfPatient(Doctors);
             // Act
             var result = await doctorServices.GetDoctorsAsync();
             // Assert

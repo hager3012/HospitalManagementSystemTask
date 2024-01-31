@@ -18,10 +18,21 @@ namespace Hospital_ManagementSystem.Services
         {
             _patientDbContext = patientDbContext;
         }
-
-        public async Task<Record?> ViewRecord(string IdPatient)
+        /// <summary>
+        /// Retrieves detailed information for a specific patient based on the provided patient ID.
+        /// </summary>
+        /// <param name="patientId">A string representing the unique identifier of the patient.</param>
+        /// <returns>
+        /// An object containing detailed information about the specific patient, including their
+        /// medical records, personal details, and relevant health information.
+        /// </returns>
+        /// <remarks>
+        /// This method provides a comprehensive view of the patient's information, including but
+        /// not limited to medical history, contact details, and other relevant data.
+        /// </remarks>
+        public async Task<Record?> ViewRecord(string patientId)
         {
-            var record =await  _patientDbContext.Records.Where(R => R.PatientId==IdPatient).Include(R => R.Patient)
+            var record =await  _patientDbContext.Records.Where(R => R.PatientId==patientId).Include(R => R.Patient)
                 .Include(R => R.MedicalHistory).ThenInclude(M => M.SurgicalHistories)
                 .Include(R => R.MedicalHistory).ThenInclude(M => M.Past_Illnesses)
                 .Include(R => R.MedicalHistory).ThenInclude(M => M.VitalSigns)

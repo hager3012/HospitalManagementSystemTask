@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nN6xp/wscv/+WZKZ6qWCq2gZ36P6HjN5zab/dQqS5Il96jrmUclB5xTxzg9tTzl6fNjFTrec/FmZ+u0YncG98w==",
+  "dgSpecHash": "P5phqwRostbHtr2Iw/0wDPcxwG++ObkLeYulELWU/K3hxMCuRYW4MUzjVkVVok+l5sZ4SwQqDKDTCfEMCDxQAA==",
   "success": true,
-  "projectFilePath": "D:\\testCode\\Hospital-Management-System\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj",
+  "projectFilePath": "C:\\Users\\user\\Downloads\\HospitalMagagementSystem\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.1\\microsoft.aspnetcore.cryptography.internal.8.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.1\\microsoft.aspnetcore.cryptography.keyderivation.8.0.1.nupkg.sha512",

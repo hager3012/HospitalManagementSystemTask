@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\testCode\\Hospital-Management-System\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj": {}
+    "C:\\Users\\user\\Downloads\\HospitalMagagementSystem\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj": {}
   },
   "projects": {
-    "D:\\testCode\\Hospital-Management-System\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj": {
+    "C:\\Users\\user\\Downloads\\HospitalMagagementSystem\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\testCode\\Hospital-Management-System\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Downloads\\HospitalMagagementSystem\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj",
         "projectName": "Hospital-ManagementSystem.Core",
-        "projectPath": "D:\\testCode\\Hospital-Management-System\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj",
+        "projectPath": "C:\\Users\\user\\Downloads\\HospitalMagagementSystem\\Hospital-ManagementSystem.Core\\Hospital-ManagementSystem.Core.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\testCode\\Hospital-Management-System\\Hospital-ManagementSystem.Core\\obj\\",
+        "outputPath": "C:\\Users\\user\\Downloads\\HospitalMagagementSystem\\Hospital-ManagementSystem.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

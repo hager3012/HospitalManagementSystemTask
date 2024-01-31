@@ -65,28 +65,7 @@ namespace Hospital_Management_System.Tests.Services
         public async Task GetAllPrescription_ReturnEmptyPrescriptions()
         {
             //Arrange
-            using var context = ContextGenerator.Generator();
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-            var prescription = new List<Prescription>
-            {
-                new Prescription
-                {
-                    MedicationName = "Test",
-                    MedicationDescription = "Test",
-                    PatientId= "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7"
-                },
-                new Prescription
-                {
-                    MedicationName = "Test",
-                    MedicationDescription = "Test",
-                    PatientId= "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7"
-                },
-            };
-            context.AddRange(prescription);
-            context.SaveChanges();
-
-            var prescriptionServices = new PrescriptionServices(context);
+            var prescriptionServices = await CreatePrescriptionService(Prescriptions);
             //Act
             var result = await prescriptionServices.GetAllPrescriptionsForPatient("26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5");
             //Assert

@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hospital-ManagementSystem.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b958b6dd404f12eba1e0522a4c4385c07875c46f")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34bfaff5b327e4e961ed499b54a3316e7ea829f2")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("Hospital-ManagementSystem.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hospital-ManagementSystem.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

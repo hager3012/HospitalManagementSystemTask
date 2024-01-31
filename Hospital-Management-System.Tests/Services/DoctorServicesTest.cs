@@ -1,5 +1,6 @@
 ﻿using Hospital_ManagementSystem.Core.Entity.Identity;
 using Hospital_ManagementSystem.Core.Entity.PatientModule;
+using Hospital_ManagementSystem.Repository.Data;
 using Hospital_ManagementSystem.Services;
 using System;
 using System.Collections.Generic;
@@ -24,45 +25,36 @@ namespace Hospital_Management_System.Tests.Services
                     Specialization = "Cardiology"
                 }
         };
-        private async Task<DoctorServices> CreateObjectOfPatient(List<Doctor> doctor = null)
+        private static DoctorServices DoctorServices;
+        private async Task<DoctorServices> CreateListOfDoctor(List<Doctor> doctors = null)
+        {
+            if (DoctorServices is null)
+            {
+                PatientDbContext context = SetupDatabase();
+
+                context.AddRange(doctors);
+                await context.SaveChangesAsync();
+
+                DoctorServices = new DoctorServices(context);
+            }
+
+
+            return DoctorServices;
+        }
+
+        private static PatientDbContext SetupDatabase()
         {
             var context = ContextGenerator.Generator();
+
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
-
-            context.AddRange(doctor);
-            await context.SaveChangesAsync();
-            var doctorServices = new DoctorServices(context);
-
-            return doctorServices;
+            return context;
         }
         [Fact]
         public async Task GetDoctors_ReturnDoctors()
         {
             //Arrange
-            //using var context = ContextGenerator.Generator();
-            //context.Database.EnsureDeleted();
-            //context.Database.EnsureCreated();
-            //// Add test data to the in-memory database
-            //var doctors = new List<Doctor>
-            //{
-            //    new Doctor
-            //    {
-            //        FullName = "John Doe",
-            //        Specialization = "Cardiology"
-            //    },
-            //    new Doctor
-            //    {
-            //        FullName = "Jane Smith",
-            //        Specialization = "Cardiology"
-            //    }
-
-            //};
-            //context.AddRange(doctors);
-            //context.SaveChanges();
-
-            //var doctorServices = new DoctorServices(context);
-            var doctorServices = await CreateObjectOfPatient(Doctors);
+            var doctorServices = await CreateListOfDoctor(Doctors);
             // Act
             var result = await doctorServices.GetDoctorsAsync();
             // Assert

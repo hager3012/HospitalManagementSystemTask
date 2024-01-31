@@ -25,14 +25,34 @@ namespace Hospital_Management_System.Tests.Services
                     Specialization = "Cardiology"
                 }
         };
+        public DoctorSchedule DoctorSchedule { get; set; } = new DoctorSchedule
+        {
+            Id = 1,
+            Date = new DateOnly(2024, 1, 28),
+            Day = "Sunday",
+            Time = new TimeSpan(10, 30, 0),
+            DoctorId = 1,
+            Doctor = new Doctor
+            {
+                Id = 1,
+                FullName = "John Doe",
+                Specialization = "Cardiology"
+            }
+        };
         private static DoctorServices DoctorServices;
-        private async Task<DoctorServices> CreateListOfDoctor(List<Doctor> doctors = null)
+        private async Task<DoctorServices> CreateListOfDoctor(List<Doctor> doctors = null,DoctorSchedule doctorSchedule =null)
         {
             if (DoctorServices is null)
             {
                 PatientDbContext context = SetupDatabase();
 
-                context.AddRange(doctors);
+                if(doctors != null)
+                    context.AddRange(doctors);
+
+                if (doctorSchedule != null)
+
+                    context.Add(doctorSchedule);
+
                 await context.SaveChangesAsync();
 
                 DoctorServices = new DoctorServices(context);
@@ -75,29 +95,7 @@ namespace Hospital_Management_System.Tests.Services
         public async Task GetDoctorSchedules_ReturnDoctorSchedules()
         {
             //Arrange
-            using var context = ContextGenerator.Generator();
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-            var doctorSchedule = new DoctorSchedule
-            {
-                Id = 1,
-                Date = new DateOnly(2024, 1, 28),
-                Day = "Sunday",
-                Time = new TimeSpan(10, 30, 0),
-                DoctorId = 1,
-                Doctor = new Doctor 
-                { 
-                    Id = 1,
-                    FullName= "John Doe",
-                    Specialization = "Cardiology"
-                }
-
-
-            };
-            context.AddRange(doctorSchedule);
-            context.SaveChanges();
-
-            var doctorServices = new DoctorServices(context);
+            var doctorServices = await CreateListOfDoctor(null,DoctorSchedule);
             //Act
             var result = await doctorServices.GetDoctorSchedulesAsync(1);
             //Assert

@@ -116,29 +116,7 @@ namespace Hospital_Management_System.Tests.Services
         public async Task GetDoctorSchedules_ReturnNullDoctorSchedules_InvalidDoctorId()
         {
             //Arrange
-            using var context = ContextGenerator.Generator();
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-            var doctorSchedule = new DoctorSchedule
-            {
-                Id = 1,
-                Date = new DateOnly(2024, 1, 28),
-                Day = "Sunday",
-                Time = new TimeSpan(10, 30, 0),
-                DoctorId = 1,
-                Doctor = new Doctor
-                {
-                    Id = 1,
-                    FullName = "John Doe",
-                    Specialization = "Cardiology"
-                }
-
-
-            };
-            context.AddRange(doctorSchedule);
-            context.SaveChanges();
-
-            var doctorServices = new DoctorServices(context);
+            var doctorServices = await CreateListOfDoctor(null, DoctorSchedule);
             //Act
             var result = await doctorServices.GetDoctorSchedulesAsync(2);
             //Assert

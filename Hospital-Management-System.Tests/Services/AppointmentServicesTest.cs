@@ -108,10 +108,7 @@ namespace Hospital_Management_System.Tests.Services
         public async Task GetAppointments_ReturnNullAppointments()
         {
             //Arrange
-            using var context = ContextGenerator.Generator(); ;
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-            var appointmentServices = new AppointmentServices(context);
+            var appointmentServices = await CreateAppointment(Appointments);
 
             // Act
             var result = await appointmentServices.GetAppointments("26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7");

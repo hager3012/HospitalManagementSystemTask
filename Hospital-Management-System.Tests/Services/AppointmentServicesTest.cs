@@ -97,41 +97,7 @@ namespace Hospital_Management_System.Tests.Services
         public async Task GetAppointments_ReturnAppointments()
         {
             //Arrange
-            using var context = ContextGenerator.Generator(); ;
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-            var appointmentServices = new AppointmentServices(context);
-            var appointment = new List<Appointment>
-            {
-                new Appointment
-                {
-                Id = 1,
-                Date = new DateOnly(2024, 1, 26),
-                DoctorId = 1,
-                Time = TimeSpan.FromHours(14),
-                PatientId = "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7",
-                Doctor = new Doctor
-                {
-                    FullName= "John Doe",
-                    Specialization= "Cardiology"
-                }
-            },
-                new Appointment
-                {
-                Id = 2,
-                Date = new DateOnly(2024, 1, 26),
-                DoctorId = 1,
-                Time = TimeSpan.FromHours(14),
-                PatientId = "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7",
-                Doctor = new Doctor
-                {
-                    FullName= "John Doe",
-                    Specialization= "Cardiology"
-                }
-            }
-        };
-            context.AddRange(appointment);
-            context.SaveChanges();
+            var appointmentServices = await CreateAppointment(Appointments);
 
             // Act
             var result = await appointmentServices.GetAppointments("26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7");

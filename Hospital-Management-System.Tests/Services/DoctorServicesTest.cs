@@ -105,10 +105,8 @@ namespace Hospital_Management_System.Tests.Services
         public async Task GetDoctorSchedules_ReturnNullDoctorSchedules()
         {
             //Arrange
-            using var context = ContextGenerator.Generator();
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-            var doctorServices = new DoctorServices(context);
+            var doctorServices = await CreateListOfDoctor(null, DoctorSchedule);
+            SetupDatabase();
             //Act
             var result = await doctorServices.GetDoctorSchedulesAsync(1);
             //Assert

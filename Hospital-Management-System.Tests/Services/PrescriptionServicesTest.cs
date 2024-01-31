@@ -45,10 +45,13 @@ namespace Hospital_Management_System.Tests.Services
 
                 },
         };
+<<<<<<< HEAD
         //public Prescription Prescription { get; set; }= new Prescription
         //{
 
         //}
+=======
+>>>>>>> feature/viewDoctors
         private static PrescriptionServices PrescriptionServices;
         private async Task<PrescriptionServices> CreatePrescriptionService(List<Prescription> prescriptions = null)
         {

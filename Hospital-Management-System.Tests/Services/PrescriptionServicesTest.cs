@@ -15,17 +15,40 @@ namespace Hospital_Management_System.Tests.Services
         {
                 new Prescription
                 {
+                    Id = 1,
                     MedicationName = "Test",
                     MedicationDescription = "Test",
-                    PatientId= "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7"
+                    PatientId= "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7",
+                    DoctorId =1,
+                    Doctor = new Doctor
+                    {
+                        Id=1,
+                        FullName= "Test",
+                        Specialization  ="lksan"
+                    }
+
                 },
                 new Prescription
                 {
+                    Id = 2,
                     MedicationName = "Test",
                     MedicationDescription = "Test",
-                    PatientId= "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7"
+                    PatientId= "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7",
+                    DoctorId = 2,
+                    Doctor = new Doctor
+                    {
+                        Id=2,
+                        FullName= "Test",
+                         Specialization  ="lksan"
+                    }
+
+
                 },
         };
+        //public Prescription Prescription { get; set; }= new Prescription
+        //{
+
+        //}
         private static PrescriptionServices PrescriptionServices;
         private async Task<PrescriptionServices> CreatePrescriptionService(List<Prescription> prescriptions = null)
         {
@@ -75,26 +98,7 @@ namespace Hospital_Management_System.Tests.Services
         public async Task GetPrescriptionDetails_ReturnPrescription()
         {
             //Arrange
-            using var context = ContextGenerator.Generator();
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-            var prescription = new Prescription
-            {
-                MedicationName = "Test",
-                MedicationDescription = "Test",
-                PatientId = "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7",
-                DoctorId = 1,
-                Doctor = new Doctor
-                {
-                    Id = 1,
-                    FullName = "Test",
-                    Specialization="smkn"
-                }
-            };
-            context.AddRange(prescription);
-            context.SaveChanges();
-
-            var prescriptionServices = new PrescriptionServices(context);
+            var prescriptionServices = await CreatePrescriptionService(Prescriptions);
             //Act
             var result = await prescriptionServices.GetPrescription("26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7",1);
             //Assert
@@ -104,26 +108,7 @@ namespace Hospital_Management_System.Tests.Services
         public async Task GetPrescriptionDetails_ReturnNullPrescription()
         {
             //Arrange
-            using var context = ContextGenerator.Generator();
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-            var prescription = new Prescription
-            {
-                MedicationName = "Test",
-                MedicationDescription = "Test",
-                PatientId = "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7",
-                DoctorId = 1,
-                Doctor = new Doctor
-                {
-                    Id = 1,
-                    FullName = "Test",
-                    Specialization = "smkn"
-                }
-            };
-            context.AddRange(prescription);
-            context.SaveChanges();
-
-            var prescriptionServices = new PrescriptionServices(context);
+            var prescriptionServices = await CreatePrescriptionService(Prescriptions);
             //Act
             var result = await prescriptionServices.GetPrescription("26c9e7dc-fb7c-4084-af5f-9e5cc", 1);
             //Assert

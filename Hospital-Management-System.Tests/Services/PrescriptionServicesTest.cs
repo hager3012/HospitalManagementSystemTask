@@ -1,4 +1,5 @@
 ﻿using Hospital_ManagementSystem.Core.Entity.PatientModule;
+using Hospital_ManagementSystem.Repository.Data;
 using Hospital_ManagementSystem.Services;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,6 @@ namespace Hospital_Management_System.Tests.Services
 {
     public class PrescriptionServicesTest
     {
-<<<<<<< Updated upstream
-=======
         public List<Prescription> Prescriptions { get; set; } = new List<Prescription>
         {
                 new Prescription
@@ -71,7 +70,6 @@ namespace Hospital_Management_System.Tests.Services
             context.Database.EnsureCreated();
             return context;
         }
->>>>>>> Stashed changes
         [Fact]
         public async Task GetAllPrescription_ReturnPrescription()
         {

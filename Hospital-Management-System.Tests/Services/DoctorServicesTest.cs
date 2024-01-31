@@ -64,10 +64,8 @@ namespace Hospital_Management_System.Tests.Services
         public async Task GetDoctors_ReturnNoDoctors()
         {
             //Arrange
-            using var context = ContextGenerator.Generator(); ;
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-            var doctorServices = new DoctorServices(context);
+            var doctorServices = await CreateListOfDoctor(Doctors);
+            SetupDatabase();
             // Act
             var result = await doctorServices.GetDoctorsAsync();
             // Assert

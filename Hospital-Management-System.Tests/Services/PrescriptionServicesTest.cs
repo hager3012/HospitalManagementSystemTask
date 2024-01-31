@@ -1,4 +1,5 @@
 ﻿using Hospital_ManagementSystem.Core.Entity.PatientModule;
+using Hospital_ManagementSystem.Repository.Data;
 using Hospital_ManagementSystem.Services;
 using System;
 using System.Collections.Generic;
@@ -10,32 +11,51 @@ namespace Hospital_Management_System.Tests.Services
 {
     public class PrescriptionServicesTest
     {
+        public List<Prescription> Prescriptions { get; set; } = new List<Prescription>
+        {
+                new Prescription
+                {
+                    MedicationName = "Test",
+                    MedicationDescription = "Test",
+                    PatientId= "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7"
+                },
+                new Prescription
+                {
+                    MedicationName = "Test",
+                    MedicationDescription = "Test",
+                    PatientId= "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7"
+                },
+        };
+        private static PrescriptionServices PrescriptionServices;
+        private async Task<PrescriptionServices> CreatePrescriptionService(List<Prescription> prescriptions = null)
+        {
+            if (PrescriptionServices is null)
+            {
+                PatientDbContext context = SetupDatabase();
+
+                context.AddRange(prescriptions);
+                await context.SaveChangesAsync();
+
+                PrescriptionServices = new PrescriptionServices(context);
+            }
+
+
+            return PrescriptionServices;
+        }
+
+        private static PatientDbContext SetupDatabase()
+        {
+            var context = ContextGenerator.Generator();
+
+            context.Database.EnsureDeleted();
+            context.Database.EnsureCreated();
+            return context;
+        }
         [Fact]
         public async Task GetAllPrescription_ReturnPrescription()
         {
             //Arrange
-            using var context = ContextGenerator.Generator();
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
-            var prescription = new List<Prescription>
-            {
-                new Prescription
-                {
-                    MedicationName = "Test",
-                    MedicationDescription = "Test",
-                    PatientId= "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7"
-                },
-                new Prescription
-                {
-                    MedicationName = "Test",
-                    MedicationDescription = "Test",
-                    PatientId= "26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7"
-                },
-            };
-            context.AddRange(prescription);
-            context.SaveChanges();
-
-            var prescriptionServices = new PrescriptionServices(context);
+            var prescriptionServices = await CreatePrescriptionService(Prescriptions);
             //Act
             var result = await prescriptionServices.GetAllPrescriptionsForPatient("26c9e7dc-fb7c-4084-af5f-9e5ccfb5d5b7");
             //Assert

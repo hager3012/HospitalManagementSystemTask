@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hospital-ManagementSystem.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b958b6dd404f12eba1e0522a4c4385c07875c46f")]
->>>>>>> dev
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3bedc3b0dc02fb7ed34579bd4398e49abc490a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hospital-ManagementSystem.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hospital-ManagementSystem.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

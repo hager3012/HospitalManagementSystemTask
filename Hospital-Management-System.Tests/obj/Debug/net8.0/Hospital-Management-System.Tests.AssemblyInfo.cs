@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Hospital-Management-System.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37ec219d64ecb63b8b12063f1ffc4f166e850a58")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6adae7b8ca2b7fa1e0a90076e0e1b18db12c8482")]
->>>>>>> feature/viewDoctors
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df6df3b7f5aa84aa29391b5e0ec932d58e055c93")]
 [assembly: System.Reflection.AssemblyProductAttribute("Hospital-Management-System.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Hospital-Management-System.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
